@@ -11,19 +11,25 @@ public class PalindromeCheck {
 		
 		while(true) {
 			
+			String rawEntry;
+		
 			// read String into var
-			String rawEntry = scan.nextLine();
+			rawEntry = scan.nextLine();
 			// ignore case
 			String entry = rawEntry.toLowerCase();
-			// if String is a 'q' quit program
-			if(entry.equals("q")) {
+			
+			// if nothing was inputted
+			if(rawEntry.length()==0) {
+				System.out.println("no input. try entry again:");
+			}
+			// if String is a 'q' quit program	
+			else if(entry.equals("q")) {
 				System.out.println("Goodbye!");
 				break;
 			}
 			
-			
 			// if String is Palindrome, say that
-			if(checkPal(entry)) {
+			else if(checkPal(entry)) {
 				System.out.println(rawEntry + " is a Palindrome!");
 				System.out.println("Enter 'q' to end program or another word:");
 			}
